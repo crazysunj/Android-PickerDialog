@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/include_pickerview_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pickerview_topbar_height" />
+
+    <LinearLayout
+        android:id="@+id/timepicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.sunjian.android_pickview_lib.view.WheelView
+            android:id="@+id/year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lable="@string/pickerview_year" />
+
+        <com.sunjian.android_pickview_lib.view.WheelView
+            android:id="@+id/month"
+            app:lable="@string/pickerview_month"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.sunjian.android_pickview_lib.view.WheelView
+            android:id="@+id/day"
+            app:lable="@string/pickerview_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.sunjian.android_pickview_lib.view.WheelView
+            android:id="@+id/hour"
+            app:lable="@string/pickerview_hours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.sunjian.android_pickview_lib.view.WheelView
+            android:id="@+id/min"
+            app:lable="@string/pickerview_minutes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/tvPhoneTime"
+        android:text="手机日期"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/tvTime"
+        android:text="电视日期"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/tvPhoneOptions"
+        android:layout_marginTop="10dp"
+        android:text="手机地址"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/tvOptions"
+        android:layout_marginTop="10dp"
+        android:text="改版条件"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</LinearLayout>

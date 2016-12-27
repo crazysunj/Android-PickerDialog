@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="pickerview">
+        <attr name="gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColorOut" format="color"/>
+        <attr name="textColorCenter" format="color"/>
+        <attr name="highLight_textColorCenter" format="color"/>
+        <attr name="dividerColor" format="color"/>
+        <attr name="isRequestFocus" format="boolean"/>
+        <attr name="isCyclic" format="boolean"/>
+        <attr name="lable" format="string"/>
+    </declare-styleable>
+</resources>
