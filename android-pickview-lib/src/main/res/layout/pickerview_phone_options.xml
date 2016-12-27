@@ -21,14 +21,14 @@
             android:id="@+id/options1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:isCyclic="true" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/options2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:lable="市"
             app:isCyclic="true" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
