@@ -80,5 +80,4 @@ compile 'com.sunjian:android-pickview-lib:1.0.0'
 * 初始化都以传bundle的形式传入，对话框都是继承于dialogfragment，方便管理。
 
 
-###好了，大家有问题直接在github上提问吧，也可以直接加我QQ387953660，大家一起学习吧！
-
+###好了，大家有问题直接在github上提问吧，也可以直接加我QQ387953660，喜欢的朋友赏颗星星吧！
