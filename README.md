@@ -1,9 +1,9 @@
 # Android-PickerView
 pickerview
-###这是一个兼容手机和电视(焦点选择)的高仿IOS风格的选择器。
+### 这是一个兼容手机和电视(焦点选择)的高仿IOS风格的选择器。
 
 
-###Gradle依赖
+### Gradle依赖
 
 ```
 compile 'com.sunjian:android-pickview-lib:1.0.0'
@@ -27,7 +27,7 @@ compile 'com.sunjian:android-pickview-lib:1.0.0'
 
 ![](https://github.com/crazysunj/Android-PickerView/blob/master/picture/TVOptions.png)
 
-####几个小用法
+#### 几个小用法
 
 * 若继承已有对话框，想调整布局的位置，不改变布局的数量，只需要重写
 
