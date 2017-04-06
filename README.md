@@ -83,3 +83,22 @@ compile 'com.sunjian:android-pickview-lib:1.0.0'
 ### 好了，大家有问题直接在github上提问吧，也可以直接加我QQ387953660，喜欢的朋友赏颗星星吧！
 
 ### [博客地址：http://crazysunj.com/](http://crazysunj.com/)
+
+
+### License
+
+> ```
+> Copyright 2016 Season.Zlc
+>
+> Licensed under the Apache License, Version 2.0 (the "License");
+> you may not use this file except in compliance with the License.
+> You may obtain a copy of the License at
+>
+>    http://www.apache.org/licenses/LICENSE-2.0
+>
+> Unless required by applicable law or agreed to in writing, software
+> distributed under the License is distributed on an "AS IS" BASIS,
+> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+> See the License for the specific language governing permissions and
+> limitations under the License.
+> ```
