@@ -17,7 +17,7 @@ compile 'com.sunjian:android-pickview-lib:1.0.0'
 
 * 手机选项(根据集合显示，这里以地址为例)
 
-![](https://github.com/crazysunj/Android-PickerView/blob/master/picture/optionsPhone .png)
+![](https://github.com/crazysunj/Android-PickerView/blob/master/picture/optionsPhone.png)
 
 * 电视日期(红色表示聚焦，颜色可修改)
 
