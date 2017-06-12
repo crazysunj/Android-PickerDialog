@@ -1,1 +1,1 @@
-include ':app', ':android-pickview-lib'
+include ':app', ':android-pickerdialog'

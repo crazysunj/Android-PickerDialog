@@ -1,12 +1,12 @@
-# Android-PickerView
-pickerview
+# Android-PickerDialog
+
 ### 这是一个兼容手机和电视(焦点选择)的高仿IOS风格的选择器。
 
 
 ### Gradle依赖
 
 ```
-compile 'com.sunjian:android-pickview-lib:1.0.0'
+compile 'com.crazysunj:android-pickerdialog:1.0.0'
 ```
 
 示例图：
@@ -79,10 +79,11 @@ compile 'com.sunjian:android-pickview-lib:1.0.0'
 
 * 初始化都以传bundle的形式传入，对话框都是继承于dialogfragment，方便管理。
 
+### 传送门
 
-### 好了，大家有问题直接在github上提问，喜欢的朋友赏颗星星吧！
+[博客地址：http://crazysunj.com/](http://crazysunj.com/)
 
-### [博客地址：http://crazysunj.com/](http://crazysunj.com/)
+[Android-PickerView](https://github.com/Bigkoo/Android-PickerView)
 
 ### License
 

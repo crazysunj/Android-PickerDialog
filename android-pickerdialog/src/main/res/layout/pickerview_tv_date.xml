@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/timepicker"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_tv_layout_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <com.sunjian.android_pickview_lib.view.WheelView
+        android:id="@+id/year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:isRequestFocus="true"
+        app:lable="@string/pickerview_year" />
+
+    <com.sunjian.android_pickview_lib.view.WheelView
+        android:id="@+id/month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:isRequestFocus="true"
+        app:lable="@string/pickerview_month" />
+
+    <com.sunjian.android_pickview_lib.view.WheelView
+        android:id="@+id/day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:isRequestFocus="true"
+        app:lable="@string/pickerview_day" />
+
+    <com.sunjian.android_pickview_lib.view.WheelView
+        android:id="@+id/hour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:isRequestFocus="true"
+        app:lable="@string/pickerview_hours" />
+
+    <com.sunjian.android_pickview_lib.view.WheelView
+        android:id="@+id/min"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:isRequestFocus="true"
+        app:lable="@string/pickerview_minutes" />
+
+    <TextView
+        android:id="@+id/btnOK"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/selector_pickerview_ok"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#000" />
+
+</LinearLayout>
+
