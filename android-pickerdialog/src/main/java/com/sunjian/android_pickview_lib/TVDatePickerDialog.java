@@ -20,7 +20,7 @@ public class TVDatePickerDialog extends BaseDatePickerDialog {
 
     public static TVDatePickerDialog newInstance(Bundle bundle) {
         TVDatePickerDialog dialog = new TVDatePickerDialog();
-        dialog.setArguments(bundle==null?new Bundle():bundle);
+        dialog.setArguments(bundle == null ? new Bundle() : bundle);
         return dialog;
     }
 
@@ -33,7 +33,12 @@ public class TVDatePickerDialog extends BaseDatePickerDialog {
 
     @Override
     protected int getPickerViewId() {
-        return R.id.timepicker;
+        return R.id.tv_time_picker;
+    }
+
+    @Override
+    protected int getResLayoutId() {
+        return R.layout.pickerview_tv_date;
     }
 
     @Override

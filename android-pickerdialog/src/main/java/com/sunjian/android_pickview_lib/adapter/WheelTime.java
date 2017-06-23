@@ -1,9 +1,10 @@
 package com.sunjian.android_pickview_lib.adapter;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.annotation.IntDef;
 import android.view.View;
 
-import com.sunjian.android_pickview_lib.R;
 import com.sunjian.android_pickview_lib.listener.OnItemSelectedListener;
 import com.sunjian.android_pickview_lib.view.WheelView;
 
@@ -25,7 +26,7 @@ public class WheelTime {
     private WheelView wv_hours;
     private WheelView wv_mins;
 
-//    private Type type;
+    //    private Type type;
     public static final int DEFULT_START_YEAR = 1990;
     public static final int DEFULT_END_YEAR = 2100;
     private int startYear = DEFULT_START_YEAR;
@@ -49,17 +50,17 @@ public class WheelTime {
     private int textSize = 6;
 
     public WheelTime(View view) {
-        this(view,ALL,6);
+        this(view, ALL, 6);
     }
 
     public WheelTime(View view, @DateType int type) {
-        this(view,type,6);
+        this(view, type, 6);
     }
 
-    public WheelTime(View view, @DateType int type,int textSize) {
+    public WheelTime(View view, @DateType int type, int textSize) {
         this.view = view;
         this.type = type;
-        this.textSize=textSize;
+        this.textSize = textSize;
         setView(view);
     }
 
@@ -75,18 +76,24 @@ public class WheelTime {
         final List<String> list_big = Arrays.asList(months_big);
         final List<String> list_little = Arrays.asList(months_little);
 
+        Context context = view.getContext();
+        Resources resources = context.getResources();
+        String packageName = context.getPackageName();
+        int yearId = resources.getIdentifier("year", "id", packageName);
         // 年
-        wv_year = (WheelView) view.findViewById(R.id.year);
+        wv_year = (WheelView) view.findViewById(yearId);
         wv_year.setAdapter(new NumericWheelAdapter(startYear, endYear));// 设置"年"的显示数据
         wv_year.setCurrentItem(year - startYear);// 初始化时显示的数据
 
+        int monthId = resources.getIdentifier("month", "id", packageName);
         // 月
-        wv_month = (WheelView) view.findViewById(R.id.month);
+        wv_month = (WheelView) view.findViewById(monthId);
         wv_month.setAdapter(new NumericWheelAdapter(1, 12));
         wv_month.setCurrentItem(month);
 
+        int dayId = resources.getIdentifier("day", "id", packageName);
         // 日
-        wv_day = (WheelView) view.findViewById(R.id.day);
+        wv_day = (WheelView) view.findViewById(dayId);
         // 判断大小月及是否闰年,用来确定"日"的数据
         if (list_big.contains(String.valueOf(month + 1))) {
             wv_day.setAdapter(new NumericWheelAdapter(1, 31));
@@ -101,12 +108,13 @@ public class WheelTime {
         }
         wv_day.setCurrentItem(day - 1);
 
-
-        wv_hours = (WheelView) view.findViewById(R.id.hour);
+        int hourId = resources.getIdentifier("hour", "id", packageName);
+        wv_hours = (WheelView) view.findViewById(hourId);
         wv_hours.setAdapter(new NumericWheelAdapter(0, 23));
         wv_hours.setCurrentItem(h);
 
-        wv_mins = (WheelView) view.findViewById(R.id.min);
+        int minId = resources.getIdentifier("min", "id", packageName);
+        wv_mins = (WheelView) view.findViewById(minId);
         wv_mins.setAdapter(new NumericWheelAdapter(0, 59));
         wv_mins.setCurrentItem(m);
 
@@ -208,7 +216,7 @@ public class WheelTime {
     }
 
     //获取焦点
-    public void requestFocus(){
+    public void requestFocus() {
         wv_year.requestFocus();
     }
 

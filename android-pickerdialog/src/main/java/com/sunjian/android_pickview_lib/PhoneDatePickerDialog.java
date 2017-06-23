@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 public class PhoneDatePickerDialog extends BaseDatePickerDialog {
 
-    private View mBtnSubmit, mBtnCancel;
-    private TextView mTvTitle;
+    private TextView mBtnSubmit, mBtnCancel, mTvTitle;
+    private View mBgView;
 
     public static PhoneDatePickerDialog newInstance() {
         return newInstance(null);
@@ -25,7 +25,7 @@ public class PhoneDatePickerDialog extends BaseDatePickerDialog {
 
     public static PhoneDatePickerDialog newInstance(Bundle bundle) {
         PhoneDatePickerDialog dialog = new PhoneDatePickerDialog();
-        dialog.setArguments(bundle==null?new Bundle():bundle);
+        dialog.setArguments(bundle == null ? new Bundle() : bundle);
         return dialog;
     }
 
@@ -50,8 +50,9 @@ public class PhoneDatePickerDialog extends BaseDatePickerDialog {
 
     @Override
     protected void initView(View v) {
-        mBtnSubmit = v.findViewById(R.id.btnSubmit);
-        mBtnCancel = v.findViewById(R.id.btnCancel);
+        mBtnSubmit = (TextView) v.findViewById(R.id.btnSubmit);
+        mBtnCancel = (TextView) v.findViewById(R.id.btnCancel);
+        mBgView = v.findViewById(R.id.bg_view);
         mBtnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,10 +76,22 @@ public class PhoneDatePickerDialog extends BaseDatePickerDialog {
 
     @Override
     protected int getPickerViewId() {
-        return R.id.timepicker;
+        return R.id.phone_time_picker;
     }
 
-    public void setTitle(String title){
-        mTvTitle.setText(title);
+    public TextView getTitleText() {
+        return mTvTitle;
+    }
+
+    public TextView getLeftText() {
+        return mBtnCancel;
+    }
+
+    public TextView getRightText() {
+        return mBtnSubmit;
+    }
+
+    public View getBgView() {
+        return mBgView;
     }
 }

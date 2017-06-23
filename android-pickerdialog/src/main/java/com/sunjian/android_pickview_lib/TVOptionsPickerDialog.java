@@ -10,34 +10,34 @@ import java.util.ArrayList;
  * Created by sunjian on 2016/12/23.
  */
 
-public class TVOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B,C> {
+public class TVOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A, B, C> {
 
     private View mBtnOK;
 
-    public static <A,B,C>TVOptionsPickerDialog<A,B,C> newInstance() {
+    public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance() {
         return newInstance(null);
     }
 
-    public static <A,B,C>TVOptionsPickerDialog<A,B,C> newInstance(Bundle bundle) {
+    public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance(Bundle bundle) {
         return newInstance(bundle, null);
     }
 
-    public static <A,B,C>TVOptionsPickerDialog<A,B,C> newInstance(Bundle bundle, ArrayList<A> options1Items) {
+    public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance(Bundle bundle, ArrayList<A> options1Items) {
         return newInstance(bundle, options1Items, null);
     }
 
-    public static <A,B,C>TVOptionsPickerDialog<A,B,C> newInstance(
+    public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance(
             Bundle bundle, ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items) {
         return newInstance(bundle, options1Items, options2Items, null);
     }
 
-    public static <A,B,C>TVOptionsPickerDialog<A,B,C> newInstance(
+    public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance(
             ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items,
             ArrayList<ArrayList<ArrayList<C>>> options3Items) {
-        return newInstance(null,options1Items,options2Items,options3Items);
+        return newInstance(null, options1Items, options2Items, options3Items);
     }
 
-    public static <A,B,C>TVOptionsPickerDialog<A,B,C> newInstance(
+    public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance(
             Bundle bundle, ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items,
             ArrayList<ArrayList<ArrayList<C>>> options3Items) {
         TVOptionsPickerDialog dialog = new TVOptionsPickerDialog();
@@ -73,6 +73,11 @@ public class TVOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B,C>
 
     @Override
     protected int getPickerViewId() {
-        return R.id.optionspicker;
+        return R.id.tv_options_picker;
+    }
+
+    @Override
+    protected int getResLayoutId() {
+        return R.layout.pickerview_tv_options;
     }
 }

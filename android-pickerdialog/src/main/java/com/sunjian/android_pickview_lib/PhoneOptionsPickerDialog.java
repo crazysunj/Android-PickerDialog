@@ -16,35 +16,35 @@ import java.util.ArrayList;
  * Created by sunjian on 2016/12/23.
  */
 
-public class PhoneOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B,C> {
+public class PhoneOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A, B, C> {
 
-    private View mBtnSubmit, mBtnCancel;
-    private TextView mTvTitle;
+    private TextView mBtnSubmit, mBtnCancel, mTvTitle;
+    private View mBgView;
 
-    public static <A,B,C>PhoneOptionsPickerDialog<A,B,C> newInstance() {
+    public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance() {
         return newInstance(null);
     }
 
-    public static <A,B,C>PhoneOptionsPickerDialog<A,B,C> newInstance(Bundle bundle) {
+    public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance(Bundle bundle) {
         return newInstance(bundle, null);
     }
 
-    public static <A,B,C>PhoneOptionsPickerDialog<A,B,C> newInstance(Bundle bundle, ArrayList<A> options1Items) {
+    public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance(Bundle bundle, ArrayList<A> options1Items) {
         return newInstance(bundle, options1Items, null);
     }
 
-    public static <A,B,C>PhoneOptionsPickerDialog<A,B,C> newInstance(
+    public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance(
             Bundle bundle, ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items) {
         return newInstance(bundle, options1Items, options2Items, null);
     }
 
-    public static <A,B,C>PhoneOptionsPickerDialog<A,B,C> newInstance(
+    public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance(
             ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items,
             ArrayList<ArrayList<ArrayList<C>>> options3Items) {
-        return newInstance(null,options1Items,options2Items,options3Items);
+        return newInstance(null, options1Items, options2Items, options3Items);
     }
 
-    public static <A,B,C>PhoneOptionsPickerDialog<A,B,C> newInstance(
+    public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance(
             Bundle bundle, ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items,
             ArrayList<ArrayList<ArrayList<C>>> options3Items) {
         PhoneOptionsPickerDialog dialog = new PhoneOptionsPickerDialog();
@@ -59,7 +59,7 @@ public class PhoneOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(STYLE_NO_TITLE, R.style.PickerDialogStyle);
+        setStyle(STYLE_NO_TITLE, com.sunjian.android_pickview_lib.R.style.PickerDialogStyle);
     }
 
     //实现从底部弹出
@@ -76,8 +76,9 @@ public class PhoneOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B
 
     @Override
     protected void initView(View v) {
-        mBtnSubmit = v.findViewById(R.id.btnSubmit);
-        mBtnCancel = v.findViewById(R.id.btnCancel);
+        mBgView = v.findViewById(R.id.bg_view);
+        mBtnSubmit = (TextView) v.findViewById(R.id.btnSubmit);
+        mBtnCancel = (TextView) v.findViewById(R.id.btnCancel);
         mBtnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +97,7 @@ public class PhoneOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B
 
     @Override
     protected int getPickerViewId() {
-        return R.id.optionspicker;
+        return R.id.phone_options_picker;
     }
 
     @Override
@@ -104,7 +105,19 @@ public class PhoneOptionsPickerDialog<A,B,C> extends BaseOptionsPickerDialog<A,B
         return R.layout.pickerview_phone_options;
     }
 
-    public void setTitle(String title) {
-        mTvTitle.setText(title);
+    public TextView getTitleText() {
+        return mTvTitle;
+    }
+
+    public TextView getLeftText() {
+        return mBtnCancel;
+    }
+
+    public TextView getRightText() {
+        return mBtnSubmit;
+    }
+
+    public View getBgView() {
+        return mBgView;
     }
 }

@@ -1,15 +1,15 @@
 # Android-PickerDialog
 
-### 这是一个兼容手机和电视(焦点选择)的高仿IOS风格的选择器。
+## 这是一个兼容手机和电视(焦点选择)的高仿IOS风格的选择器。
 
 
-### Gradle依赖
+#### Gradle依赖
 
 ```
-compile 'com.crazysunj:android-pickerdialog:1.0.1'
+compile 'com.crazysunj:android-pickerdialog:1.0.2'
 ```
 
-示例图：
+#### 效果图
 
 * 手机日期
 
@@ -17,7 +17,7 @@ compile 'com.crazysunj:android-pickerdialog:1.0.1'
 
 * 手机选项(根据集合显示，这里以地址为例)
 
-![](https://github.com/crazysunj/Android-PickerView/blob/master/picture/optionsPhone.png)
+![](https://github.com/crazysunj/Android-PickerDialog/blob/master/picture/optionsPhone%20.png?raw=true)
 
 * 电视日期(红色表示聚焦，颜色可修改)
 
@@ -27,30 +27,7 @@ compile 'com.crazysunj:android-pickerdialog:1.0.1'
 
 ![](https://github.com/crazysunj/Android-PickerView/blob/master/picture/TVOptions.png)
 
-#### 几个小用法
-
-* 若继承已有对话框，想调整布局的位置，不改变布局的数量，只需要重写
-
-```
-	/**
-     * 如果想调整布局可通过继承，重写该方法，但是id不能变
-     * 若需求较为复杂，请自己自定义dialog
-     */
-    @LayoutRes
-    protected int getResLayoutId() {
-        return R.layout.pickerview_tv_options;
-    }
-```
-
-* 若继承基类，请重写以下方法，当然id是固定的，具体自己看，哈哈。
-
-```
-	//关于wheelview的id都是规定的,year,month,day,hour,min
-    @IdRes
-    protected abstract int getPickerViewId();
-```
-
-* WheelView支持以下属性
+#### 属性
 
 ```
 //位置，支持左中右
@@ -59,31 +36,44 @@ compile 'com.crazysunj:android-pickerdialog:1.0.1'
      <enum name="left" value="3"/>
      <enum name="right" value="5"/>
 </attr>
+
 //字体大小
 <attr name="textSize" format="dimension"/>
+
 //上下字体颜色
 <attr name="textColorOut" format="color"/>
+
 //中间字体颜色
 <attr name="textColorCenter" format="color"/>
+
 //聚焦字体颜色，用于聚焦类APP
 <attr name="highLight_textColorCenter" format="color"/>
+
 //分割线颜色
 <attr name="dividerColor" format="color"/>
+
 //是否用于聚焦
 <attr name="isRequestFocus" format="boolean"/>
+
 //是否循环
 <attr name="isCyclic" format="boolean"/>
+
 //单位
 <attr name="lable" format="string"/>
 ```
 
-* 初始化都以传bundle的形式传入，对话框都是继承于dialogfragment，方便管理。
+初始化都以传bundle的形式传入，对话框都是继承于DialogFragment，方便管理。
+
+如果是继承于BaseOptionsPickerDialog或者BaseDatePickerDialog，实现getResLayoutId的时候注意id的命名。
+时间命名为year，month,day,hour,min
+条件命名为options1，options2，options3
+id是通过resources.getIdentifier找到的。
 
 ### 传送门
 
-[博客地址：http://crazysunj.com/](http://crazysunj.com/)
+博客地址：[http://crazysunj.com/](http://crazysunj.com/)
 
-[Android-PickerView](https://github.com/Bigkoo/Android-PickerView)
+参考：[Android-PickerView](https://github.com/Bigkoo/Android-PickerView)
 
 ### License
 

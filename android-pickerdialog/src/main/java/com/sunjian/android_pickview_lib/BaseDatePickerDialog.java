@@ -21,7 +21,6 @@ import java.util.Date;
  * 封装基类日期dialog为dialogfragment，方便生命周期的管理
  * Created by sunjian on 2016/12/22.
  */
-
 public abstract class BaseDatePickerDialog extends DialogFragment {
 
     public static final String START_YEAR = "START_YEAR";//开始年份
@@ -33,7 +32,7 @@ public abstract class BaseDatePickerDialog extends DialogFragment {
     //基础字体大小
     public static final String BASE_TEXT_SIZE = "BASE_TEXT_SIZE";
 
-    WheelTime mWheelTime;
+    protected WheelTime mWheelTime;
     protected OnTimeSelectListener mTimeSelectListener;
 
     @Nullable
@@ -114,7 +113,6 @@ public abstract class BaseDatePickerDialog extends DialogFragment {
 
     }
 
-    //关于wheelview的id都是规定的,year,month,day,hour,min
     @IdRes
     protected abstract int getPickerViewId();
 
@@ -127,13 +125,11 @@ public abstract class BaseDatePickerDialog extends DialogFragment {
     }
 
     /**
-     * 如果想调整布局可通过继承，重写该方法，但是id不能变
+     * 如果想调整布局可通过继承，重写该方法
      * 若需求较为复杂，请自己自定义dialog
      */
     @LayoutRes
-    protected int getResLayoutId() {
-        return R.layout.pickerview_tv_date;
-    }
+    protected abstract int getResLayoutId();
 
     public interface OnTimeSelectListener {
         void onTimeSelect(Date date);

@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Created by sunjian on 2016/12/22.
  */
 
-public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
+public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
 
     //单位
     public static final String LABEL_FIRST = "LABEL_FIRST";
@@ -39,7 +39,7 @@ public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
     //联动
     public static final String LINKAGE = "LINKAGE";
 
-    WheelOptions<A,B,C> mWheelOptions;
+    protected WheelOptions<A, B, C> mWheelOptions;
 
     private OnOptionsSelectListener mOptionsSelectListener;
 
@@ -50,7 +50,7 @@ public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v =  inflater.inflate(getResLayoutId(), container, false);
+        View v = inflater.inflate(getResLayoutId(), container, false);
         init(v, savedInstanceState);
         return v;
     }
@@ -73,7 +73,7 @@ public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
 
         boolean linkage = bundle.getBoolean(LINKAGE, true);
 
-        int textSize= bundle.getInt(TEXT_SIZE,25);
+        int textSize = bundle.getInt(TEXT_SIZE, 25);
 
         //恢复数据
         if (savedInstanceState != null) {
@@ -90,7 +90,7 @@ public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
 
         // ----转轮
         final View optionspicker = v.findViewById(getPickerViewId());
-        mWheelOptions = new WheelOptions<A,B,C>(optionspicker,textSize);
+        mWheelOptions = new WheelOptions<A, B, C>(optionspicker, textSize);
 
         mWheelOptions.setPicker(mOptions1Items, mOptions2Items, mOptions3Items, linkage);
 
@@ -99,7 +99,7 @@ public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
 
         mWheelOptions.setLabels(firstLabel, secondLabel, thirdLabel);
 
-        if(firstCyclic||secondCyclic||thirdCyclic){
+        if (firstCyclic || secondCyclic || thirdCyclic) {
             mWheelOptions.setCyclic(firstCyclic, secondCyclic, thirdCyclic);
         }
 
@@ -137,9 +137,7 @@ public abstract class BaseOptionsPickerDialog<A,B,C> extends DialogFragment {
      * 若需求较为复杂，请自己自定义dialog
      */
     @LayoutRes
-    protected int getResLayoutId() {
-        return R.layout.pickerview_tv_options;
-    }
+    protected abstract int getResLayoutId();
 
 
     /**

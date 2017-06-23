@@ -11,7 +11,7 @@
         android:layout_height="@dimen/pickerview_topbar_height" />
 
     <LinearLayout
-        android:id="@+id/timepicker"
+        android:id="@+id/phone_time_picker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
