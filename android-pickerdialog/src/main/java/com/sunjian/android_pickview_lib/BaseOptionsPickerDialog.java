@@ -99,9 +99,7 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
 
         mWheelOptions.setLabels(firstLabel, secondLabel, thirdLabel);
 
-        if (firstCyclic || secondCyclic || thirdCyclic) {
-            mWheelOptions.setCyclic(firstCyclic, secondCyclic, thirdCyclic);
-        }
+        mWheelOptions.setCyclic(firstCyclic, secondCyclic, thirdCyclic);
 
         if (selectFirst != 0 || selectSecond != 0 || selectThird != 0) {
             mWheelOptions.setCurrentItems(selectFirst, selectSecond, selectThird);

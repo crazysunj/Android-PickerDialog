@@ -191,6 +191,16 @@ public class WheelOptions<A, B, C> {
     }
 
     /**
+     * 设置第一级是否循环滚动
+     *
+     * @param cyclic 是否循环
+     */
+    public void setOption1Cyclic(boolean cyclic) {
+        wv_option1.setCyclic(cyclic);
+    }
+
+
+    /**
      * 设置第二级是否循环滚动
      *
      * @param cyclic 是否循环
