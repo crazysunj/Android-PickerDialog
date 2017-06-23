@@ -6,7 +6,7 @@
 #### Gradle依赖
 
 ```
-compile 'com.crazysunj:android-pickerdialog:1.0.2'
+compile 'com.crazysunj:android-pickerdialog:1.0.3'
 ```
 
 #### 效果图
@@ -65,8 +65,11 @@ compile 'com.crazysunj:android-pickerdialog:1.0.2'
 初始化都以传bundle的形式传入，对话框都是继承于DialogFragment，方便管理。
 
 如果是继承于BaseOptionsPickerDialog或者BaseDatePickerDialog，实现getResLayoutId的时候注意id的命名。
+
 时间命名为year，month,day,hour,min
+
 条件命名为options1，options2，options3
+
 id是通过resources.getIdentifier找到的。
 
 ### 传送门
