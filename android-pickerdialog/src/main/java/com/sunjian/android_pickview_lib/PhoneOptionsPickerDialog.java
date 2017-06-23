@@ -18,8 +18,8 @@ import java.util.ArrayList;
 
 public class PhoneOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A, B, C> {
 
-    private TextView mBtnSubmit, mBtnCancel, mTvTitle;
-    private View mBgView;
+    protected TextView mBtnSubmit, mBtnCancel, mTvTitle;
+    protected View mBgView;
 
     public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance() {
         return newInstance(null);
@@ -59,7 +59,7 @@ public class PhoneOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(STYLE_NO_TITLE, com.sunjian.android_pickview_lib.R.style.PickerDialogStyle);
+        setStyle(STYLE_NO_TITLE, R.style.PickerDialogStyle);
     }
 
     //实现从底部弹出
@@ -103,21 +103,5 @@ public class PhoneOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A
     @Override
     protected int getResLayoutId() {
         return R.layout.pickerview_phone_options;
-    }
-
-    public TextView getTitleText() {
-        return mTvTitle;
-    }
-
-    public TextView getLeftText() {
-        return mBtnCancel;
-    }
-
-    public TextView getRightText() {
-        return mBtnSubmit;
-    }
-
-    public View getBgView() {
-        return mBgView;
     }
 }

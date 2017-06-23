@@ -6,7 +6,7 @@
 #### Gradle依赖
 
 ```
-compile 'com.crazysunj:android-pickerdialog:1.0.3'
+compile 'com.crazysunj:android-pickerdialog:1.0.4'
 ```
 
 #### 效果图
@@ -71,6 +71,8 @@ compile 'com.crazysunj:android-pickerdialog:1.0.3'
 条件命名为options1，options2，options3
 
 id是通过resources.getIdentifier找到的。
+
+简单修改样式可继承已有对话框修改。
 
 ### 传送门
 

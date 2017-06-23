@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 public class PhoneDatePickerDialog extends BaseDatePickerDialog {
 
-    private TextView mBtnSubmit, mBtnCancel, mTvTitle;
-    private View mBgView;
+    protected TextView mBtnSubmit, mBtnCancel, mTvTitle;
+    protected View mBgView;
 
     public static PhoneDatePickerDialog newInstance() {
         return newInstance(null);
@@ -77,21 +77,5 @@ public class PhoneDatePickerDialog extends BaseDatePickerDialog {
     @Override
     protected int getPickerViewId() {
         return R.id.phone_time_picker;
-    }
-
-    public TextView getTitleText() {
-        return mTvTitle;
-    }
-
-    public TextView getLeftText() {
-        return mBtnCancel;
-    }
-
-    public TextView getRightText() {
-        return mBtnSubmit;
-    }
-
-    public View getBgView() {
-        return mBgView;
     }
 }
