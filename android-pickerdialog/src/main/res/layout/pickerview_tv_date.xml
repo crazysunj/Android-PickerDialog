@@ -16,40 +16,40 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true"
-        app:lable="@string/pickerview_year" />
+        app:pickerdialog_isRequestFocus="true"
+        app:pickerdialog_lable="@string/pickerview_year" />
 
     <com.sunjian.android_pickview_lib.view.WheelView
         android:id="@+id/month"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true"
-        app:lable="@string/pickerview_month" />
+        app:pickerdialog_isRequestFocus="true"
+        app:pickerdialog_lable="@string/pickerview_month" />
 
     <com.sunjian.android_pickview_lib.view.WheelView
         android:id="@+id/day"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true"
-        app:lable="@string/pickerview_day" />
+        app:pickerdialog_isRequestFocus="true"
+        app:pickerdialog_lable="@string/pickerview_day" />
 
     <com.sunjian.android_pickview_lib.view.WheelView
         android:id="@+id/hour"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true"
-        app:lable="@string/pickerview_hours" />
+        app:pickerdialog_isRequestFocus="true"
+        app:pickerdialog_lable="@string/pickerview_hours" />
 
     <com.sunjian.android_pickview_lib.view.WheelView
         android:id="@+id/min"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true"
-        app:lable="@string/pickerview_minutes" />
+        app:pickerdialog_isRequestFocus="true"
+        app:pickerdialog_lable="@string/pickerview_minutes" />
 
     <TextView
         android:id="@+id/btnOK"
@@ -60,7 +60,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:gravity="center"
-        android:text="确定"
+        android:text="@string/confirm"
         android:textColor="#000" />
 
 </LinearLayout>

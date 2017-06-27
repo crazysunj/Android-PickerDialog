@@ -22,21 +22,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:isCyclic="true" />
+            app:pickerdialog_isCyclic="true" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/options2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:isCyclic="true" />
+            app:pickerdialog_isCyclic="true" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/options3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:isCyclic="true" />
+            app:pickerdialog_isCyclic="true" />
     </LinearLayout>
 
 

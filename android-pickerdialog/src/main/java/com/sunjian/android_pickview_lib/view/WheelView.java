@@ -1,6 +1,7 @@
 package com.sunjian.android_pickview_lib.view;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -127,24 +128,26 @@ public class WheelView extends View {
 
     public WheelView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        textColorOut = getResources().getColor(R.color.pickerview_wheelview_textcolor_out);
-        textColorCenter = getResources().getColor(R.color.pickerview_wheelview_textcolor_center);
-        textHighLightColorCenter = getResources().getColor(R.color.pickerview_wheelview_textcolor_highlight_center);
-        dividerColor = getResources().getColor(R.color.pickerview_wheelview_textcolor_divider);
+        Resources resources = getResources();
+        textColorOut = resources.getColor(R.color.pickerview_wheelview_textcolor_out);
+        textColorCenter = resources.getColor(R.color.pickerview_wheelview_textcolor_center);
+        textHighLightColorCenter = resources.getColor(R.color.pickerview_wheelview_textcolor_highlight_center);
+        dividerColor = resources.getColor(R.color.pickerview_wheelview_textcolor_divider);
         //配合customTextSize使用，customTextSize为true才会发挥效果
-        textSize = getResources().getDimensionPixelSize(R.dimen.pickerview_textsize);
-        customTextSize = getResources().getBoolean(R.bool.pickerview_customTextSize);
+        textSize = resources.getDimensionPixelSize(R.dimen.pickerview_textsize);
+        customTextSize = resources.getBoolean(R.bool.pickerview_customTextSize);
         if (attrs != null) {
-            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.pickerview, 0, 0);
-            mGravity = a.getInt(R.styleable.pickerview_gravity, mGravity);
-            textColorOut = a.getColor(R.styleable.pickerview_textColorOut, textColorOut);
-            textColorCenter = a.getColor(R.styleable.pickerview_textColorCenter, textColorCenter);
-            textHighLightColorCenter = a.getColor(R.styleable.pickerview_highLight_textColorCenter, textHighLightColorCenter);
-            dividerColor = a.getColor(R.styleable.pickerview_dividerColor, dividerColor);
-            textSize = a.getDimensionPixelOffset(R.styleable.pickerview_textSize, textSize);
-            isRequestFocus = a.getBoolean(R.styleable.pickerview_isRequestFocus, isRequestFocus);
-            isLoop = a.getBoolean(R.styleable.pickerview_isCyclic, isLoop);
-            label = a.getString(R.styleable.pickerview_lable);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.WheelView, 0, 0);
+            mGravity = a.getInt(R.styleable.WheelView_pickerdialog_gravity, mGravity);
+            textColorOut = a.getColor(R.styleable.WheelView_pickerdialog_textColorOut, textColorOut);
+            textColorCenter = a.getColor(R.styleable.WheelView_pickerdialog_textColorCenter, textColorCenter);
+            textHighLightColorCenter = a.getColor(R.styleable.WheelView_pickerdialog_highLight_textColorCenter, textHighLightColorCenter);
+            dividerColor = a.getColor(R.styleable.WheelView_pickerdialog_dividerColor, dividerColor);
+            textSize = a.getDimensionPixelOffset(R.styleable.WheelView_pickerdialog_textSize, textSize);
+            isRequestFocus = a.getBoolean(R.styleable.WheelView_pickerdialog_isRequestFocus, isRequestFocus);
+            isLoop = a.getBoolean(R.styleable.WheelView_pickerdialog_isCyclic, isLoop);
+            label = a.getString(R.styleable.WheelView_pickerdialog_lable);
+            a.recycle();
         }
 
         initLoopView(context);

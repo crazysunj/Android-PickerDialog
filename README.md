@@ -6,7 +6,7 @@
 #### Gradle依赖
 
 ```
-compile 'com.crazysunj:android-pickerdialog:1.0.5'
+compile 'com.crazysunj:android-pickerdialog:1.0.7'
 ```
 
 #### 效果图
@@ -31,35 +31,36 @@ compile 'com.crazysunj:android-pickerdialog:1.0.5'
 
 ```
 //位置，支持左中右
-<attr name="gravity">
-     <enum name="center" value="17"/>
-     <enum name="left" value="3"/>
-     <enum name="right" value="5"/>
+ <attr name="pickerdialog_gravity">
+    <enum name="center" value="17" />
+    <enum name="left" value="3" />
+    <enum name="right" value="5" />
 </attr>
 
 //字体大小
-<attr name="textSize" format="dimension"/>
+<attr name="pickerdialog_textSize" format="dimension" />
 
 //上下字体颜色
-<attr name="textColorOut" format="color"/>
+<attr name="pickerdialog_textColorOut" format="color" />
 
 //中间字体颜色
-<attr name="textColorCenter" format="color"/>
+<attr name="pickerdialog_textColorCenter" format="color" />
+
 
 //聚焦字体颜色，用于聚焦类APP
-<attr name="highLight_textColorCenter" format="color"/>
+<attr name="pickerdialog_highLight_textColorCenter" format="color" />
 
 //分割线颜色
-<attr name="dividerColor" format="color"/>
+<attr name="pickerdialog_dividerColor" format="color" />
 
 //是否用于聚焦
-<attr name="isRequestFocus" format="boolean"/>
+<attr name="pickerdialog_isRequestFocus" format="boolean" />
 
 //是否循环
-<attr name="isCyclic" format="boolean"/>
+<attr name="pickerdialog_isCyclic" format="boolean" />
 
 //单位
-<attr name="lable" format="string"/>
+<attr name="pickerdialog_lable" format="string" />
 ```
 
 初始化都以传bundle的形式传入，对话框都是继承于DialogFragment，方便管理。

@@ -22,35 +22,35 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:lable="@string/pickerview_year" />
+            app:pickerdialog_lable="@string/pickerview_year" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/month"
-            app:lable="@string/pickerview_month"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:pickerdialog_lable="@string/pickerview_month" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/day"
-            app:lable="@string/pickerview_day"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:pickerdialog_lable="@string/pickerview_day" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/hour"
-            app:lable="@string/pickerview_hours"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:pickerdialog_lable="@string/pickerview_hours" />
 
         <com.sunjian.android_pickview_lib.view.WheelView
             android:id="@+id/min"
-            app:lable="@string/pickerview_minutes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:pickerdialog_lable="@string/pickerview_minutes" />
     </LinearLayout>
 
 

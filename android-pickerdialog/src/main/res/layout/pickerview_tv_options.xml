@@ -16,21 +16,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true" />
+        app:pickerdialog_isRequestFocus="true" />
 
     <com.sunjian.android_pickview_lib.view.WheelView
         android:id="@+id/options2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true" />
+        app:pickerdialog_isRequestFocus="true" />
 
     <com.sunjian.android_pickview_lib.view.WheelView
         android:id="@+id/options3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:isRequestFocus="true" />
+        app:pickerdialog_isRequestFocus="true" />
 
     <TextView
         android:id="@+id/btnOK"
@@ -41,7 +41,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:gravity="center"
-        android:text="确定"
+        android:text="@string/confirm"
         android:textColor="#000" />
 
 </LinearLayout>

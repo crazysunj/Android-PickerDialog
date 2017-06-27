@@ -7,4 +7,5 @@
     <string name="pickerview_hours">时</string>
     <string name="pickerview_minutes">分</string>
     <string name="pickerview_seconds">秒</string>
+    <string name="confirm">确定</string>
 </resources>

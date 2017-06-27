@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="pickerview">
-        <attr name="gravity">
-            <enum name="center" value="17"/>
-            <enum name="left" value="3"/>
-            <enum name="right" value="5"/>
-        </attr>
-        <attr name="textSize" format="dimension"/>
-        <attr name="textColorOut" format="color"/>
-        <attr name="textColorCenter" format="color"/>
-        <attr name="highLight_textColorCenter" format="color"/>
-        <attr name="dividerColor" format="color"/>
-        <attr name="isRequestFocus" format="boolean"/>
-        <attr name="isCyclic" format="boolean"/>
-        <attr name="lable" format="string"/>
+
+    <attr name="pickerdialog_gravity">
+        <enum name="center" value="17" />
+        <enum name="left" value="3" />
+        <enum name="right" value="5" />
+    </attr>
+
+    <attr name="pickerdialog_textSize" format="dimension" />
+    <attr name="pickerdialog_textColorOut" format="color" />
+    <attr name="pickerdialog_textColorCenter" format="color" />
+    <attr name="pickerdialog_highLight_textColorCenter" format="color" />
+    <attr name="pickerdialog_dividerColor" format="color" />
+    <attr name="pickerdialog_isRequestFocus" format="boolean" />
+    <attr name="pickerdialog_isCyclic" format="boolean" />
+    <attr name="pickerdialog_lable" format="string" />
+
+    <declare-styleable name="WheelView">
+        <attr name="pickerdialog_gravity" />
+        <attr name="pickerdialog_textSize" />
+        <attr name="pickerdialog_textColorOut" />
+        <attr name="pickerdialog_textColorCenter" />
+        <attr name="pickerdialog_highLight_textColorCenter" />
+        <attr name="pickerdialog_dividerColor" />
+        <attr name="pickerdialog_isRequestFocus" />
+        <attr name="pickerdialog_isCyclic" />
+        <attr name="pickerdialog_lable" />
     </declare-styleable>
 </resources>
