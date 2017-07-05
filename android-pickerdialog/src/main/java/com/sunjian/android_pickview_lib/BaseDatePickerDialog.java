@@ -31,6 +31,12 @@ public abstract class BaseDatePickerDialog extends DialogFragment {
     public static final String DATE_TYPE = "DATE_TYPE";//日期类型
     //基础字体大小
     public static final String BASE_TEXT_SIZE = "BASE_TEXT_SIZE";
+    public static final String START_TIME_MILLIS = "START_TIME_MILLIS";
+    public static final String START_TIME_DATE = "START_TIME_DATE";
+    public static final String START_TIME_CALENDAR = "START_TIME_CALENDAR";
+    public static final String END_TIME_MILLIS = "END_TIME_MILLIS";
+    public static final String END_TIME_DATE = "END_TIME_DATE";
+    public static final String END_TIME_CALENDAR = "END_TIME_CALENDAR";
 
     protected WheelTime mWheelTime;
     protected OnTimeSelectListener mTimeSelectListener;
@@ -47,9 +53,9 @@ public abstract class BaseDatePickerDialog extends DialogFragment {
 
         Bundle bundle = getArguments();
 
-        int startYear = bundle.getInt(START_YEAR, 0);
+        int startYear = bundle.getInt(START_YEAR, -1);
 
-        int endYear = bundle.getInt(END_YEAR, 0);
+        int endYear = bundle.getInt(END_YEAR, -1);
 
         boolean isCyclic = bundle.getBoolean(IS_CYCLIC, false);
 
@@ -79,9 +85,42 @@ public abstract class BaseDatePickerDialog extends DialogFragment {
         mWheelTime = new WheelTime(timepickerview, type, baseTextSize);
 
         //设置时间范围
-        if (startYear != 0 && endYear != 0) {
+        if (startYear != -1) {
             mWheelTime.setStartYear(startYear);
+        }
+
+        if (endYear != -1) {
             mWheelTime.setEndYear(endYear);
+        }
+
+        long startTimeMillils = bundle.getLong(START_TIME_MILLIS, -1);
+        if (startTimeMillils != -1) {
+            mWheelTime.setStartDate(startTimeMillils);
+        }
+
+        long endTimeMillils = bundle.getLong(END_TIME_MILLIS, -1);
+        if (endTimeMillils != -1) {
+            mWheelTime.setEndDate(endTimeMillils);
+        }
+
+        Date startTimeDate = (Date) bundle.getSerializable(START_TIME_DATE);
+        if (startTimeDate != null) {
+            mWheelTime.setStartDate(startTimeDate);
+        }
+
+        Date endTimeDate = (Date) bundle.getSerializable(END_TIME_DATE);
+        if (endTimeDate != null) {
+            mWheelTime.setEndDate(endTimeDate);
+        }
+
+        Calendar startTimeCal = (Calendar) bundle.getSerializable(START_TIME_CALENDAR);
+        if (startTimeCal != null) {
+            mWheelTime.setStartDate(startTimeCal);
+        }
+
+        Calendar endTimeCal = (Calendar) bundle.getSerializable(END_TIME_CALENDAR);
+        if (endTimeCal != null) {
+            mWheelTime.setEndDate(endTimeCal);
         }
 
         //设置选中时间

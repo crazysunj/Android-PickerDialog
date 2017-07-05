@@ -17,6 +17,7 @@ import com.sunjian.android_pickview_lib.model.IPickerViewData;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -119,7 +120,17 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString(BaseOptionsPickerDialog.LABEL_SECOND, "市");
         bundle.putString(BaseOptionsPickerDialog.LABEL_THIRD, "区");
 
-        phoneDatePickerDialog = PhoneDatePickerDialog.newInstance();
+        Bundle dBundle = new Bundle();
+        Calendar startCal = Calendar.getInstance();
+        Calendar endCal = Calendar.getInstance();
+        endCal.set(2030, 1, 13);
+//        dBundle.putLong(PhoneDatePickerDialog.START_TIME_MILLIS, startCal.getTimeInMillis());
+//        dBundle.putLong(PhoneDatePickerDialog.END_TIME_MILLIS, endCal.getTimeInMillis());
+//        dBundle.putSerializable(PhoneDatePickerDialog.START_TIME_DATE, startCal.getTime());
+//        dBundle.putSerializable(PhoneDatePickerDialog.END_TIME_DATE, endCal.getTime());
+        dBundle.putSerializable(PhoneDatePickerDialog.START_TIME_CALENDAR, startCal);
+        dBundle.putSerializable(PhoneDatePickerDialog.END_TIME_CALENDAR, endCal);
+        phoneDatePickerDialog = PhoneDatePickerDialog.newInstance(dBundle);
         phoneDatePickerDialog.setOnTimeSelectListener(new BaseDatePickerDialog.OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date) {
