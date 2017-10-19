@@ -41,11 +41,13 @@ public class PhoneDatePickerDialog extends BaseDatePickerDialog {
     public void onStart() {
         super.onStart();
         Window window = getDialog().getWindow();
-        WindowManager.LayoutParams params = window.getAttributes();
-        params.gravity = Gravity.BOTTOM;
-        params.width = WindowManager.LayoutParams.MATCH_PARENT;
-        window.setAttributes(params);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        if (window != null) {
+            WindowManager.LayoutParams params = window.getAttributes();
+            params.gravity = Gravity.BOTTOM;
+            params.width = WindowManager.LayoutParams.MATCH_PARENT;
+            window.setAttributes(params);
+            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
     }
 
     @Override

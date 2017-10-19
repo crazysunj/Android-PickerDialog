@@ -40,7 +40,7 @@ public class TVOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A, B
     public static <A, B, C> TVOptionsPickerDialog<A, B, C> newInstance(
             Bundle bundle, ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items,
             ArrayList<ArrayList<ArrayList<C>>> options3Items) {
-        TVOptionsPickerDialog dialog = new TVOptionsPickerDialog();
+        TVOptionsPickerDialog<A, B, C> dialog = new TVOptionsPickerDialog<>();
         dialog.setArguments(bundle == null ? new Bundle() : bundle);
         dialog.mOptions1Items = options1Items;
         dialog.mOptions2Items = options2Items;

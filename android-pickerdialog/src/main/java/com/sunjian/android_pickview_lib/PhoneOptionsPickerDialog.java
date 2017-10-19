@@ -47,7 +47,7 @@ public class PhoneOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A
     public static <A, B, C> PhoneOptionsPickerDialog<A, B, C> newInstance(
             Bundle bundle, ArrayList<A> options1Items, ArrayList<ArrayList<B>> options2Items,
             ArrayList<ArrayList<ArrayList<C>>> options3Items) {
-        PhoneOptionsPickerDialog dialog = new PhoneOptionsPickerDialog();
+        PhoneOptionsPickerDialog<A, B, C> dialog = new PhoneOptionsPickerDialog<>();
         dialog.setArguments(bundle == null ? new Bundle() : bundle);
         dialog.mOptions1Items = options1Items;
         dialog.mOptions2Items = options2Items;
@@ -67,11 +67,13 @@ public class PhoneOptionsPickerDialog<A, B, C> extends BaseOptionsPickerDialog<A
     public void onStart() {
         super.onStart();
         Window window = getDialog().getWindow();
-        WindowManager.LayoutParams params = window.getAttributes();
-        params.gravity = Gravity.BOTTOM;
-        params.width = WindowManager.LayoutParams.MATCH_PARENT;
-        window.setAttributes(params);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        if (window != null) {
+            WindowManager.LayoutParams params = window.getAttributes();
+            params.gravity = Gravity.BOTTOM;
+            params.width = WindowManager.LayoutParams.MATCH_PARENT;
+            window.setAttributes(params);
+            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
     }
 
     @Override

@@ -111,9 +111,10 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
 
     }
 
-    protected void initView(View v) {
-
-    }
+    /**
+     * @param v 初始化view
+     */
+    protected abstract void initView(View v);
 
     //信息保存
     @Override
@@ -126,13 +127,19 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
         super.onSaveInstanceState(outState);
     }
 
-    //关于wheelview的id都是规定的,year,month,day,hour,min
+    /**
+     * 关于wheelview的id都是规定的, year, month, day, hour, min
+     *
+     * @return pickerview的id
+     */
     @IdRes
     protected abstract int getPickerViewId();
 
     /**
      * 如果想调整布局可通过继承，重写该方法，但是id不能变
      * 若需求较为复杂，请自己自定义dialog
+     *
+     * @return 资源Id
      */
     @LayoutRes
     protected abstract int getResLayoutId();
@@ -142,13 +149,17 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
      * 以下方法不能作为初始化使用，即创建页面后使用
      */
     public void setPicker(ArrayList<A> optionsItems) {
-        if (mWheelOptions == null) return;
+        if (mWheelOptions == null) {
+            return;
+        }
         mWheelOptions.setPicker(optionsItems, null, null, false);
     }
 
     public void setPicker(ArrayList<A> options1Items,
                           ArrayList<ArrayList<B>> options2Items, boolean linkage) {
-        if (mWheelOptions == null) return;
+        if (mWheelOptions == null) {
+            return;
+        }
         mWheelOptions.setPicker(options1Items, options2Items, null, linkage);
     }
 
@@ -156,7 +167,9 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
                           ArrayList<ArrayList<B>> options2Items,
                           ArrayList<ArrayList<ArrayList<C>>> options3Items,
                           boolean linkage) {
-        if (mWheelOptions == null) return;
+        if (mWheelOptions == null) {
+            return;
+        }
         mWheelOptions.setPicker(options1Items, options2Items, options3Items,
                 linkage);
     }
@@ -165,7 +178,9 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
      * 设置选中的item位置
      */
     public void setSelectOptions(int option1) {
-        if (mWheelOptions == null) return;
+        if (mWheelOptions == null) {
+            return;
+        }
         mWheelOptions.setCurrentItems(option1, 0, 0);
     }
 
@@ -173,7 +188,9 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
      * 设置选中的item位置
      */
     public void setSelectOptions(int option1, int option2) {
-        if (mWheelOptions == null) return;
+        if (mWheelOptions == null) {
+            return;
+        }
         mWheelOptions.setCurrentItems(option1, option2, 0);
     }
 
@@ -181,7 +198,9 @@ public abstract class BaseOptionsPickerDialog<A, B, C> extends DialogFragment {
      * 设置选中的item位置
      */
     public void setSelectOptions(int option1, int option2, int option3) {
-        if (mWheelOptions == null) return;
+        if (mWheelOptions == null) {
+            return;
+        }
         mWheelOptions.setCurrentItems(option1, option2, option3);
     }
 
