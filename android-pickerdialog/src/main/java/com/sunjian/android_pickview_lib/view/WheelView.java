@@ -644,6 +644,10 @@ public class WheelView extends View {
             if (!(count == 0 || nextItem >= count)) {
                 setCurrentItem(nextItem);
                 handler.sendEmptyMessage(MessageHandler.WHAT_ITEM_SELECTED);
+            } else if (isLoop) {
+                nextItem = getLoopMappingIndex(getCurrentItem() + 1);
+                setCurrentItem(nextItem);
+                handler.sendEmptyMessage(MessageHandler.WHAT_ITEM_SELECTED);
             }
             return true;
         } else if (keyCode == KeyEvent.KEYCODE_DPAD_UP) {
@@ -651,6 +655,10 @@ public class WheelView extends View {
             int count = getItemsCount();
             int preItem = getCurrentItem() - 1;
             if (!(count == 0 || preItem < 0)) {
+                setCurrentItem(preItem);
+                handler.sendEmptyMessage(MessageHandler.WHAT_ITEM_SELECTED);
+            } else if (isLoop) {
+                preItem = getLoopMappingIndex(getCurrentItem() - 1);
                 setCurrentItem(preItem);
                 handler.sendEmptyMessage(MessageHandler.WHAT_ITEM_SELECTED);
             }
