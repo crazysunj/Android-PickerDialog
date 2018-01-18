@@ -6,7 +6,7 @@
 #### Gradle依赖
 
 ```
-compile 'com.crazysunj:android-pickerdialog:1.1.0'
+compile 'com.crazysunj:android-pickerdialog:1.1.1'
 ```
 
 #### 效果图

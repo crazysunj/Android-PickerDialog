@@ -640,7 +640,7 @@ public class WheelView extends View {
         if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN) {
             //下键
             int count = getItemsCount();
-            int nextItem = getCurrentItem() + 1;
+            int nextItem = isLoop ? getLoopMappingIndex(getCurrentItem() + 1) : getCurrentItem() + 1;
             if (!(count == 0 || nextItem >= count)) {
                 setCurrentItem(nextItem);
                 handler.sendEmptyMessage(MessageHandler.WHAT_ITEM_SELECTED);
@@ -649,7 +649,7 @@ public class WheelView extends View {
         } else if (keyCode == KeyEvent.KEYCODE_DPAD_UP) {
             //上键
             int count = getItemsCount();
-            int preItem = getCurrentItem() - 1;
+            int preItem = isLoop ? getLoopMappingIndex(getCurrentItem() - 1) : getCurrentItem() - 1;
             if (!(count == 0 || preItem < 0)) {
                 setCurrentItem(preItem);
                 handler.sendEmptyMessage(MessageHandler.WHAT_ITEM_SELECTED);
